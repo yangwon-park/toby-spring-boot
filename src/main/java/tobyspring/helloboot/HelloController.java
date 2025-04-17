@@ -1,11 +1,14 @@
 package tobyspring.helloboot;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Objects;
 
 // SimpleHelloService 의존함
+@RequestMapping
+@ResponseBody
 public class HelloController {
 	private final HelloService helloService;
 

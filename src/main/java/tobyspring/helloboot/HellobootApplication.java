@@ -14,6 +14,9 @@ public class HellobootApplication {
 		context.registerBean(SimpleHelloService.class);
 		context.refresh(); // BeanObject 만들어줌 (초기화 작업)
 
+		// --- 위 : Spring Container를 만드는 작업 ---
+		// --- 아래 : Servlet Container를 코드로 실행하면서 Servlet을 등록하는 작업---
+
 		ServletWebServerFactory factory = new TomcatServletWebServerFactory();
 		WebServer webServer = factory.getWebServer(servletContext -> {
 			servletContext.addServlet("dispatcherServlet",
